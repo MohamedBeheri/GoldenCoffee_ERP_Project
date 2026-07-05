@@ -7,7 +7,7 @@ export default withAuth(
     const path = req.nextUrl.pathname
     const role = token?.role as string
 
-    const permissions = {
+    const permissions: Record<string, string[]> = {
       '/factory': ['ADMIN', 'FACTORY'],
       '/warehouse': ['ADMIN', 'WAREHOUSE'],
       '/sales': ['ADMIN', 'SALES'],
